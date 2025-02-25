@@ -1,0 +1,35 @@
+.s-hospital-PatientsGrid .male-row {
+  background-color: #ADD8E6;
+}
+.s-hospital-PatientsGrid .female-row {
+  background-color:  hotpink;
+}
+.s-hospital-PatientsGrid .male-row {
+  background-color: #ADD8E6;
+}
+
+.s-hospital-PatientsGrid .female-row {
+  background-color: hotpink;
+}
+
+.s-hospital-PatientsGrid .nav  {
+  margin-top: 6px;
+}
+
+.s-hospital-PatientsGrid .nav > li > a {
+      padding: 8px 12px;
+      border-radius: 4px 4px 0 0;
+      text-decoration: none;
+      color: black;
+    }
+
+  .s-hospital-PatientsGrid .nav > li.active > a {
+    background-color: #EEE;
+    border-bottom-color: transparent;
+    color:blue
+  }
+
+.s-hospital-MedicalRecordsDialog .field-label {
+  color: #3366cc;
+  font-weight: bold;
+}
