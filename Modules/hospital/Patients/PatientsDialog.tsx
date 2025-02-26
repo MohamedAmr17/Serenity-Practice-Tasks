@@ -19,10 +19,8 @@ export class PatientsDialog extends EntityDialog<PatientsRow, any> {
     constructor() {
         super();
 
-        this.form.LoyaltyYears.change(e => this.calculateTotalDiscount());
-        this.form.LoyaltyYears.changeSelect2(e => this.calculateTotalDiscount());
-        this.form.Cost.change(e => this.calculateTotalDiscount());
-        this.form.Cost.changeSelect2(e => this.calculateTotalDiscount());
+        this.form.LoyaltyYears.change(() => { this.calculateTotalDiscount() });
+        this.form.Cost.change(() => { this.calculateTotalDiscount() });
         this.form.Gender.changeSelect2(e => this.checkGenderValidation());
 
         // If your form has PatientName and DateOfBirth fields, add change handlers
@@ -40,7 +38,7 @@ export class PatientsDialog extends EntityDialog<PatientsRow, any> {
         this.form.DoctorId.filterField = "Type"
         this.form.DoctorId.filterValue = 1
 
-        this.form.TotalDiscount.value = this.form.Cost.value * this.form.TotalDiscount.value * 0.05;
+         
 
         if (this.isNew()) {
             this.toolbar.findButton('multiply-button').hide();
@@ -60,8 +58,8 @@ export class PatientsDialog extends EntityDialog<PatientsRow, any> {
     private calculateTotalDiscount() {
         let loyaltyYears = this.form.LoyaltyYears.value || 0;
         let cost = this.form.Cost.value || 0;
-        this.form.TotalDiscount.value = loyaltyYears * cost * 0.05;
-        this.form.TotalDiscount.element.trigger("change");
+        this.form.TotalDiscount.value = (cost * loyaltyYears) * 0.05;
+        /*this.form.TotalDiscount.element.trigger("change");*/
     }
 
     private updateTaskValueInDatabase(newValue: number) {

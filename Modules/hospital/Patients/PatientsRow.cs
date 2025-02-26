@@ -63,7 +63,6 @@ public sealed class PatientsRow : Row<PatientsRow.RowFields>, IIdRow, INameRow
 
     [DisplayName("Total Discount")]
     [Expression("(t0.Cost * t0.LoyaltyYears * 0.05)")]
-
     public int? TotalDiscount { get => fields.TotalDiscount[this]; set => fields.TotalDiscount[this] = value; }
 
     [DisplayName("Doctor"), ForeignKey(typeof(DoctorsRow)), LeftJoin(jDoctor)]

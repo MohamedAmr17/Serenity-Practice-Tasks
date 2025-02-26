@@ -7,6 +7,7 @@ export interface PatientsColumns {
     PatientId: Column<PatientsRow>;
     PatientName: Column<PatientsRow>;
     Age: Column<PatientsRow>;
+    LoyaltyYears: Column<PatientsRow>;
     Cost: Column<PatientsRow>;
     TotalDiscount: Column<PatientsRow>;
     DateOfBirth: Column<PatientsRow>;

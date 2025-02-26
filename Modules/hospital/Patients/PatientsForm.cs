@@ -30,7 +30,6 @@ public class PatientsForm
     public int TotalDiscount { get; set; }
     
     [Required]
-    
     public int TaskValue { get; set; }
 
 }
